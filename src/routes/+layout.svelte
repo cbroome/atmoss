@@ -1,5 +1,8 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import { resolve } from '$app/paths';
+
+	import './app.css';
 
 	let { children } = $props();
 </script>
@@ -8,13 +11,13 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<h1>Atmoss - At Pro Simple Syndication</h1>
-
 <header>
+	<h1><a href={resolve('/')}>Atmoss - At Pro Simple Syndication</a></h1>
+
 	<nav>
 		<ul>
-			<li><a href="/login">Login</a></li>
-			<li><a href="/register">Register</a></li>
+			<li><a href={resolve('/login')}>Login</a></li>
+			<li><a href={resolve('/register')}>Register</a></li>
 		</ul>
 	</nav>
 </header>
@@ -26,6 +29,9 @@
 		background-color: #f8f8f8;
 		padding: 1rem;
 		border-bottom: 1px solid #e0e0e0;
+
+		display: flex;
+		justify-content: space-between;
 
 		nav ul {
 			list-style: none;
