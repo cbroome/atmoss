@@ -4,6 +4,12 @@ import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
 	plugins: [sveltekit()],
+	server: {
+		// Use 127.0.0.1 instead of localhost because that makes the callbacks
+		// workable in dev.
+		host: '127.0.0.1',
+		port: 5173
+	},
 	test: {
 		expect: { requireAssertions: true },
 		projects: [

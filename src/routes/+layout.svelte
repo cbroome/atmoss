@@ -3,8 +3,11 @@
 	import { resolve } from '$app/paths';
 
 	import './app.css';
+	import { LogoutButton } from '$lib/components/molecules/index.js';
 
-	let { children } = $props();
+	let { data, children } = $props();
+	console.log('data', data);
+	const { session } = data;
 </script>
 
 <svelte:head>
@@ -16,7 +19,13 @@
 
 	<nav>
 		<ul>
-			<li><a href={resolve('/login')}>Login</a></li>
+			<li>
+				{#if session?.did}
+					<LogoutButton />
+				{:else}
+					<a href={resolve('/login')}>Login</a>
+				{/if}
+			</li>
 			<li><a href={resolve('/register')}>Register</a></li>
 		</ul>
 	</nav>
