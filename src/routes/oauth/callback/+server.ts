@@ -22,11 +22,10 @@ export const GET: RequestHandler = async ({ request, cookies }) => {
 			maxAge: 60 * 60 * 24 * 7, // 1 week
 			path: '/'
 		});
-
-		const response = redirect(301, new URL('/', PUBLIC_URL));
-		return response;
 	} catch (error) {
 		console.error('OAuth callback error:', error);
-		return redirect(302, new URL('/?error=login_failed', PUBLIC_URL));
+		throw redirect(302, new URL('/?error=login_failed', PUBLIC_URL));
 	}
+
+	throw redirect(301, new URL('/', PUBLIC_URL));
 };
