@@ -20,5 +20,9 @@
   "workspaces": [
     "svelte",
     "serverless"
-  ]
+  ],
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.4.2"
+  }
 }

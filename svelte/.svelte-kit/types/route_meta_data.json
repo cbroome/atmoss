@@ -1,0 +1,29 @@
+{
+	"/": [
+		"src/routes/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/dashboard": [
+		"src/routes/dashboard/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/login": [
+		"src/routes/+layout.server.ts"
+	],
+	"/oauth-client-metadata.json": [
+		"src/routes/oauth-client-metadata.json/+server.ts"
+	],
+	"/oauth/callback": [
+		"src/routes/oauth/callback/+server.ts"
+	],
+	"/oauth/login": [
+		"src/routes/oauth/login/+server.ts"
+	],
+	"/oauth/logout": [
+		"src/routes/oauth/logout/+server.ts"
+	],
+	"/register": [
+		"src/routes/+layout.server.ts"
+	]
+}
